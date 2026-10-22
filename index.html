@@ -15,7 +15,6 @@
       --muted: #999bad;
       --pink: #ed168d;
       --cyan: #20d9e9;
-      --border: rgba(225, 226, 245, 0.3);
     }
 
     * {
@@ -209,25 +208,51 @@
       box-shadow: 0 0 18px rgba(237,22,141,.25);
     }
 
-    .email-link {
-      color: var(--cyan);
+    .button + .button {
+      margin-top: 10px;
+    }
+
+    .address-row {
+      display: flex;
+      gap: 9px;
+      align-items: stretch;
+      max-width: 440px;
+    }
+
+    .address {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      padding: 11px 15px;
+      border: 1px solid rgba(225,226,245,.45);
+      border-radius: 7px;
+      color: #f4f1f8;
+      font-size: 14px;
       overflow-wrap: anywhere;
     }
 
-    .manifesto-text {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,.15);
+    .copy-button {
+      width: 48px;
+      flex: 0 0 48px;
+      border: 1px solid rgba(225,226,245,.45);
+      border-radius: 7px;
+      background: transparent;
+      color: white;
+      font-size: 21px;
+      cursor: pointer;
     }
 
-    .manifesto-text p {
-      margin-bottom: 14px;
+    .copy-button:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
     }
 
-    .manifesto-text strong {
-      color: var(--text);
-      font-weight: 500;
-      letter-spacing: 1px;
+    .note {
+      margin-top: 10px;
+      font-size: 10px;
+      color: #888a9f;
+      line-height: 1.7;
     }
 
     footer {
@@ -374,7 +399,7 @@
           </div>
         </article>
 
-        <!-- 02: Messenger and email -->
+        <!-- 02: Messenger and Email -->
         <article class="step" id="messenger">
           <div class="step-number">
             <span>02</span>
@@ -395,12 +420,12 @@
               GHXYZ Messenger ↗
             </a>
 
-            <p style="margin-top: 14px; margin-bottom: 0;">
-              Email:
-              <a class="email-link" href="mailto:ghembrang@riseup.net">
-                ghembrang@riseup.net
-              </a>
-            </p>
+            <a
+              class="button"
+              href="mailto:ghembrang@riseup.net?subject=Hello%20GHXYZ"
+            >
+              Email Me ↗
+            </a>
           </div>
         </article>
 
@@ -413,26 +438,34 @@
           <div class="step-content">
             <h2>GH Manifesto</h2>
             <p>
-              I choose depth over breadth. A small circle, meaningful conversations,
-              privacy, and a quieter internet.
+              Read the full GH Manifesto on my private website.
             </p>
 
-            <div class="manifesto-text">
-              <p>
-                <strong>01 / INTENTION</strong><br>
-                Be here because you mean to be.
-              </p>
+            <div class="address-row">
+              <div class="address" id="manifesto-address">gh.arpa</div>
 
-              <p>
-                <strong>02 / PRIVACY</strong><br>
-                Protect the space we share.
-              </p>
-
-              <p>
-                <strong>03 / PRESENCE</strong><br>
-                Choose depth over noise.
-              </p>
+              <button
+                class="copy-button"
+                type="button"
+                onclick="copyManifestoAddress()"
+                aria-label="Copy GH Manifesto address"
+                title="Copy address"
+              >□</button>
             </div>
+
+            <p class="note" id="manifesto-note">
+              Connect to the private network before opening this address.
+            </p>
+
+            <a
+              class="button"
+              href="http://gh.arpa/manifesto"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top: 8px;"
+            >
+              Read Full Manifesto ↗
+            </a>
           </div>
         </article>
 
@@ -445,5 +478,36 @@
     </footer>
 
   </div>
+
+  <script>
+    async function copyManifestoAddress() {
+      const address = document.getElementById("manifesto-address").textContent;
+      const status = document.getElementById("manifesto-note");
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(address);
+        } else {
+          const field = document.createElement("textarea");
+          field.value = address;
+          field.style.position = "fixed";
+          field.style.opacity = "0";
+          document.body.appendChild(field);
+          field.select();
+
+          const copied = document.execCommand("copy");
+          field.remove();
+
+          if (!copied) {
+            throw new Error("Copy failed");
+          }
+        }
+
+        status.textContent = "Address copied to clipboard.";
+      } catch (error) {
+        status.textContent = "Please copy the address manually: " + address;
+      }
+    }
+  </script>
 </body>
 </html>
