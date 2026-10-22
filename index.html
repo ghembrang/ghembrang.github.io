@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090910">
-  <meta name="description" content="GHXYZ Commune: website, messenger, email, and manifesto.">
+  <meta name="description" content="GHXYZ Commune: manifesto, website, messenger, and email.">
   <title>GHXYZ · Commune</title>
 
   <style>
@@ -87,7 +87,7 @@
 
     nav {
       display: flex;
-      gap: 35px;
+      gap: 30px;
     }
 
     nav a {
@@ -255,6 +255,15 @@
       line-height: 1.7;
     }
 
+    .manifesto-quote {
+      color: var(--text) !important;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px !important;
+      line-height: 1.7 !important;
+      letter-spacing: .01em;
+      margin: 8px 0 18px !important;
+    }
+
     footer {
       display: flex;
       justify-content: space-between;
@@ -293,7 +302,8 @@
       nav {
         width: 100%;
         justify-content: space-between;
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
       }
 
       nav a {
@@ -338,6 +348,10 @@
         font-size: 11px;
       }
 
+      .manifesto-quote {
+        font-size: 17px !important;
+      }
+
       .button {
         min-width: 0;
         width: 100%;
@@ -363,6 +377,7 @@
 
       <nav aria-label="Main navigation">
         <a class="active" href="#home">HOME</a>
+        <a href="#manifesto">MANIFESTO</a>
         <a href="#website">WEBSITE</a>
         <a href="#messenger">MESSENGER</a>
         <a href="#contact">CONTACT</a>
@@ -376,69 +391,17 @@
 
       <section class="access-panel">
 
-        <!-- 01: Website -->
-        <article class="step" id="website">
+        <!-- 01: GH Manifesto -->
+        <article class="step" id="manifesto">
           <div class="step-number">
             <span>01</span>
           </div>
 
           <div class="step-content">
-            <h2>Website</h2>
-            <p>
-              Visit my personal website through the configured private access system.
-            </p>
-
-            <a
-              class="button"
-              href="https://YOUR-WEBSITE-URL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enter Website ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- 02: Messenger and Email -->
-        <article class="step" id="messenger">
-          <div class="step-number">
-            <span>02</span>
-          </div>
-
-          <div class="step-content">
-            <h2>Messenger</h2>
-            <p>
-              Connect through GHXYZ Messenger or contact me directly by email.
-            </p>
-
-            <a
-              class="button"
-              href="https://YOUR-GHXYZ-MESSENGER-URL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GHXYZ Messenger ↗
-            </a>
-
-            <a
-              class="button"
-              href="mailto:ghembrang@riseup.net?subject=Hello%20GHXYZ"
-            >
-              Email Me ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- 03: GH Manifesto -->
-        <article class="step" id="manifesto">
-          <div class="step-number">
-            <span>03</span>
-          </div>
-
-          <div class="step-content">
             <h2>GH Manifesto</h2>
-            <p>
-              Read the full GH Manifesto on my private website.
+
+            <p class="manifesto-quote">
+              I choose depth over breadth; narrow and deep, not shallow and wide.
             </p>
 
             <div class="address-row">
@@ -465,6 +428,61 @@
               style="margin-top: 8px;"
             >
               Read Full Manifesto ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 02: Website -->
+        <article class="step" id="website">
+          <div class="step-number">
+            <span>02</span>
+          </div>
+
+          <div class="step-content">
+            <h2>Website</h2>
+
+            <p>
+              Visit my personal website through the configured private access system.
+            </p>
+
+            <a
+              class="button"
+              href="https://YOUR-WEBSITE-URL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enter Website ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 03: Messenger and Email -->
+        <article class="step" id="messenger">
+          <div class="step-number">
+            <span>03</span>
+          </div>
+
+          <div class="step-content">
+            <h2>Messenger</h2>
+
+            <p>
+              Connect through GHXYZ Messenger or contact me directly by email.
+            </p>
+
+            <a
+              class="button"
+              href="https://YOUR-GHXYZ-MESSENGER-URL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GHXYZ Messenger ↗
+            </a>
+
+            <a
+              class="button"
+              href="mailto:ghembrang@riseup.net?subject=Hello%20GHXYZ"
+            >
+              Email Me ↗
             </a>
           </div>
         </article>
