@@ -214,23 +214,14 @@
 
     footer {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
-      gap: 20px;
       margin-top: 25px;
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,.17);
       color: #999bad;
       font-size: 10px;
       letter-spacing: 2px;
-    }
-
-    footer a {
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--cyan);
     }
 
     @media (max-width: 600px) {
@@ -249,9 +240,8 @@
 
       nav {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 10px;
-        flex-wrap: wrap;
       }
 
       nav a {
@@ -321,10 +311,6 @@
 
       <nav aria-label="Main navigation">
         <a class="active" href="#home">HOME</a>
-        <a href="#manifesto">MANIFESTO</a>
-        <a href="#website">WEBSITE</a>
-        <a href="#messenger">MESSENGER</a>
-        <a href="#contact">CONTACT</a>
       </nav>
     </header>
 
@@ -375,7 +361,7 @@
             <a
               class="button"
               href="https://wicaksanti.xyz"
-              target="wicaksanti.xyz"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Enter Website ↗
@@ -417,9 +403,8 @@
       </section>
     </main>
 
-    <footer id="contact">
-      <span>A SMALL CIRCLE. A QUIETER INTERNET.</span>
-      <a href="mailto:ghembrang@riseup.net">✉ &nbsp; CONTACT</a>
+    <footer>
+      <span>© 2026 GHXYZ. All rights reserved.</span>
     </footer>
 
   </div>
