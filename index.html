@@ -212,58 +212,6 @@
       margin-top: 10px;
     }
 
-    .address-row {
-      display: flex;
-      gap: 9px;
-      align-items: stretch;
-      max-width: 440px;
-    }
-
-    .address {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      align-items: center;
-      padding: 11px 15px;
-      border: 1px solid rgba(225,226,245,.45);
-      border-radius: 7px;
-      color: #f4f1f8;
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    .copy-button {
-      width: 48px;
-      flex: 0 0 48px;
-      border: 1px solid rgba(225,226,245,.45);
-      border-radius: 7px;
-      background: transparent;
-      color: white;
-      font-size: 21px;
-      cursor: pointer;
-    }
-
-    .copy-button:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-    }
-
-    .note {
-      margin-top: 10px;
-      font-size: 10px;
-      color: #888a9f;
-      line-height: 1.7;
-    }
-
-    .manifesto-quote {
-      color: var(--text) !important;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px !important;
-      line-height: 1.7 !important;
-      letter-spacing: .01em;
-      margin: 8px 0 18px !important;
-    }
-
     footer {
       display: flex;
       justify-content: space-between;
@@ -348,10 +296,6 @@
         font-size: 11px;
       }
 
-      .manifesto-quote {
-        font-size: 17px !important;
-      }
-
       .button {
         min-width: 0;
         width: 100%;
@@ -400,24 +344,8 @@
           <div class="step-content">
             <h2>GH Manifesto</h2>
 
-            <p class="manifesto-quote">
+            <p>
               I choose depth over breadth; narrow and deep, not shallow and wide.
-            </p>
-
-            <div class="address-row">
-              <div class="address" id="manifesto-address">gh.arpa</div>
-
-              <button
-                class="copy-button"
-                type="button"
-                onclick="copyManifestoAddress()"
-                aria-label="Copy GH Manifesto address"
-                title="Copy address"
-              >□</button>
-            </div>
-
-            <p class="note" id="manifesto-note">
-              Connect to the private network before opening this address.
             </p>
 
             <a
@@ -425,7 +353,6 @@
               href="http://gh.arpa/manifesto"
               target="_blank"
               rel="noopener noreferrer"
-              style="margin-top: 8px;"
             >
               Read Full Manifesto ↗
             </a>
@@ -496,36 +423,5 @@
     </footer>
 
   </div>
-
-  <script>
-    async function copyManifestoAddress() {
-      const address = document.getElementById("manifesto-address").textContent;
-      const status = document.getElementById("manifesto-note");
-
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(address);
-        } else {
-          const field = document.createElement("textarea");
-          field.value = address;
-          field.style.position = "fixed";
-          field.style.opacity = "0";
-          document.body.appendChild(field);
-          field.select();
-
-          const copied = document.execCommand("copy");
-          field.remove();
-
-          if (!copied) {
-            throw new Error("Copy failed");
-          }
-        }
-
-        status.textContent = "Address copied to clipboard.";
-      } catch (error) {
-        status.textContent = "Please copy the address manually: " + address;
-      }
-    }
-  </script>
 </body>
 </html>
