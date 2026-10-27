@@ -78,9 +78,9 @@
       flex-shrink: 0;
     }
 
-    .brand-dot.pink {
-      background: var(--pink);
-      box-shadow: 0 0 14px var(--pink);
+    .brand-dot.cyan {
+      background: var(--cyan);
+      box-shadow: 0 0 14px var(--cyan);
     }
 
     .brand-dot.purple {
@@ -88,9 +88,9 @@
       box-shadow: 0 0 14px var(--purple);
     }
 
-    .brand-dot.cyan {
-      background: var(--cyan);
-      box-shadow: 0 0 14px var(--cyan);
+    .brand-dot.pink {
+      background: var(--pink);
+      box-shadow: 0 0 14px var(--pink);
     }
 
     .brand-name {
@@ -180,7 +180,6 @@
       padding: 12px 18px;
       border: 1px solid transparent;
       border-radius: 7px;
-      color: white;
       text-decoration: none;
       text-align: center;
       font: inherit;
@@ -189,27 +188,7 @@
       transition: filter .2s, box-shadow .2s;
     }
 
-    /* 01: Manifesto — Pink */
-    .button-pink {
-      border-color: var(--pink);
-      background: linear-gradient(110deg, #c4147d, var(--pink));
-    }
-
-    .button-pink:hover {
-      box-shadow: 0 0 18px rgba(237,22,141,.3);
-    }
-
-    /* 02: Website — Purple */
-    .button-purple {
-      border-color: var(--purple);
-      background: linear-gradient(110deg, #65128f, var(--purple));
-    }
-
-    .button-purple:hover {
-      box-shadow: 0 0 18px rgba(145,38,199,.3);
-    }
-
-    /* 03: Messenger and Riseup — Cyan */
+    /* Manifesto: Cyan */
     .button-cyan {
       border-color: var(--cyan);
       background: linear-gradient(110deg, #087d91, var(--cyan));
@@ -220,12 +199,41 @@
       box-shadow: 0 0 18px rgba(32,217,233,.3);
     }
 
+    /* Website: Purple */
+    .button-purple {
+      border-color: var(--purple);
+      background: linear-gradient(110deg, #65128f, var(--purple));
+      color: white;
+    }
+
+    .button-purple:hover {
+      box-shadow: 0 0 18px rgba(145,38,199,.3);
+    }
+
+    /* Messenger and Riseup: Pink */
+    .button-pink {
+      border-color: var(--pink);
+      background: linear-gradient(110deg, #c4147d, var(--pink));
+      color: white;
+    }
+
+    .button-pink:hover {
+      box-shadow: 0 0 18px rgba(237,22,141,.3);
+    }
+
     .button:hover {
       filter: brightness(1.15);
     }
 
     .button + .button {
       margin-top: 10px;
+    }
+
+    /* Stack Messenger and Riseup vertically */
+    #messenger .button {
+      display: flex;
+      width: 100%;
+      min-width: 0;
     }
 
     @media (max-width: 600px) {
@@ -301,9 +309,9 @@
     <header>
       <a class="brand" href="#home" aria-label="GHXYZ home">
         <span class="brand-dots" aria-hidden="true">
-          <span class="brand-dot pink"></span>
-          <span class="brand-dot purple"></span>
           <span class="brand-dot cyan"></span>
+          <span class="brand-dot purple"></span>
+          <span class="brand-dot pink"></span>
         </span>
 
         <span class="brand-name">GHXYZ</span>
@@ -331,7 +339,7 @@
             </p>
 
             <a
-              class="button button-pink"
+              class="button button-cyan"
               href="https://gh.taild9388d.ts.net/manifesto"
               target="_blank"
               rel="noopener noreferrer"
@@ -379,7 +387,7 @@
             </p>
 
             <a
-              class="button button-cyan"
+              class="button button-pink"
               href="https://YOUR-GHXYZ-MESSENGER-URL"
               target="_blank"
               rel="noopener noreferrer"
@@ -388,7 +396,7 @@
             </a>
 
             <a
-              class="button button-cyan"
+              class="button button-pink"
               href="mailto:ghembrang@riseup.net?subject=Hello%20GHXYZ"
             >
               Riseup ↗
