@@ -127,12 +127,12 @@
       text-transform: uppercase;
     }
 
-    /* Main panel */
+    /* Main panel: narrowed to 640px */
 
     .access-panel {
-      width: min(720px, 100%);
+      width: min(640px, 100%);
       margin: 0 auto;
-      padding: 22px clamp(20px, 5vw, 50px);
+      padding: 22px clamp(20px, 4vw, 40px);
       border: 1px solid rgba(235, 235, 250, .8);
       border-radius: 19px;
       background: rgba(8, 9, 18, .62);
@@ -252,7 +252,7 @@
       filter: brightness(1.15);
     }
 
-    /* Place Riseup below Messenger */
+    /* Stack Messenger and Riseup vertically */
 
     #messenger .button {
       display: flex;
