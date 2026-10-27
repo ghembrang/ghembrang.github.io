@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090910">
   <meta name="description" content="GHXYZ: manifesto, website, messenger, and email.">
+
   <title>GHXYZ</title>
 
   <style>
@@ -31,9 +32,21 @@
       min-height: 100vh;
       color: var(--text);
       background:
-        radial-gradient(ellipse at 15% 30%, rgba(237,22,141,.19), transparent 28%),
-        radial-gradient(ellipse at 82% 37%, rgba(32,217,233,.16), transparent 27%),
-        radial-gradient(ellipse at 50% 85%, rgba(145,38,199,.13), transparent 30%),
+        radial-gradient(
+          ellipse at 15% 30%,
+          rgba(237, 22, 141, .19),
+          transparent 28%
+        ),
+        radial-gradient(
+          ellipse at 82% 37%,
+          rgba(32, 217, 233, .16),
+          transparent 27%
+        ),
+        radial-gradient(
+          ellipse at 50% 85%,
+          rgba(145, 38, 199, .13),
+          transparent 30%
+        ),
         var(--bg);
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       font-size: 13px;
@@ -45,9 +58,11 @@
 
     .shell {
       width: min(1440px, 100%);
-      margin: auto;
+      margin: 0 auto;
       padding: 28px clamp(24px, 5vw, 72px);
     }
+
+    /* Header */
 
     header {
       display: flex;
@@ -100,6 +115,8 @@
       letter-spacing: -2px;
     }
 
+    /* Intro */
+
     .intro {
       margin: 48px 0 32px;
       text-align: center;
@@ -110,14 +127,16 @@
       text-transform: uppercase;
     }
 
+    /* Main panel */
+
     .access-panel {
       width: min(720px, 100%);
       margin: 0 auto;
       padding: 22px clamp(20px, 5vw, 50px);
-      border: 1px solid rgba(235,235,250,.8);
+      border: 1px solid rgba(235, 235, 250, .8);
       border-radius: 19px;
       background: rgba(8, 9, 18, .62);
-      box-shadow: 0 0 40px rgba(0,0,0,.15);
+      box-shadow: 0 0 40px rgba(0, 0, 0, .15);
     }
 
     .step {
@@ -128,7 +147,7 @@
     }
 
     .step + .step .step-content {
-      border-top: 1px solid rgba(255,255,255,.16);
+      border-top: 1px solid rgba(255, 255, 255, .16);
       padding-top: 25px;
     }
 
@@ -144,7 +163,7 @@
       place-items: center;
       width: 49px;
       height: 49px;
-      border: 1px solid rgba(225,226,245,.55);
+      border: 1px solid rgba(225, 226, 245, .55);
       border-radius: 10px;
       font-size: 15px;
     }
@@ -155,7 +174,7 @@
       top: 49px;
       bottom: -20px;
       width: 1px;
-      background: rgba(225,226,245,.4);
+      background: rgba(225, 226, 245, .4);
     }
 
     .step h2 {
@@ -171,10 +190,13 @@
       line-height: 1.8;
     }
 
+    /* Shared button dimensions */
+
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 236px;
       min-width: 236px;
       min-height: 44px;
       padding: 12px 18px;
@@ -182,13 +204,16 @@
       border-radius: 7px;
       text-decoration: none;
       text-align: center;
-      font: inherit;
+      font-family: inherit;
       font-size: 12px;
       cursor: pointer;
-      transition: filter .2s, box-shadow .2s;
+      transition:
+        filter .2s ease,
+        box-shadow .2s ease;
     }
 
     /* Manifesto: Cyan */
+
     .button-cyan {
       border-color: var(--cyan);
       background: linear-gradient(110deg, #087d91, var(--cyan));
@@ -196,10 +221,11 @@
     }
 
     .button-cyan:hover {
-      box-shadow: 0 0 18px rgba(32,217,233,.3);
+      box-shadow: 0 0 18px rgba(32, 217, 233, .3);
     }
 
     /* Website: Purple */
+
     .button-purple {
       border-color: var(--purple);
       background: linear-gradient(110deg, #65128f, var(--purple));
@@ -207,10 +233,11 @@
     }
 
     .button-purple:hover {
-      box-shadow: 0 0 18px rgba(145,38,199,.3);
+      box-shadow: 0 0 18px rgba(145, 38, 199, .3);
     }
 
     /* Messenger and Riseup: Pink */
+
     .button-pink {
       border-color: var(--pink);
       background: linear-gradient(110deg, #c4147d, var(--pink));
@@ -218,23 +245,24 @@
     }
 
     .button-pink:hover {
-      box-shadow: 0 0 18px rgba(237,22,141,.3);
+      box-shadow: 0 0 18px rgba(237, 22, 141, .3);
     }
 
     .button:hover {
       filter: brightness(1.15);
     }
 
-    .button + .button {
+    /* Place Riseup below Messenger */
+
+    #messenger .button {
+      display: flex;
+    }
+
+    #messenger .button + .button {
       margin-top: 10px;
     }
 
-    /* Stack Messenger and Riseup vertically */
-    #messenger .button {
-      display: flex;
-      width: 100%;
-      min-width: 0;
-    }
+    /* Mobile layout */
 
     @media (max-width: 600px) {
       .shell {
@@ -296,8 +324,14 @@
       }
 
       .button {
+        width: 236px;
         min-width: 0;
-        width: 100%;
+        max-width: 100%;
+      }
+
+      #messenger .button {
+        width: 236px;
+        max-width: 100%;
       }
     }
   </style>
@@ -319,6 +353,7 @@
     </header>
 
     <main id="home">
+
       <div class="intro">
         Apnasvatī Mama Dhīr Astu Śakra
       </div>
@@ -326,6 +361,7 @@
       <section class="access-panel">
 
         <!-- 01: GH Manifesto -->
+
         <article class="step" id="manifesto">
           <div class="step-number">
             <span>01</span>
@@ -350,6 +386,7 @@
         </article>
 
         <!-- 02: Website -->
+
         <article class="step" id="website">
           <div class="step-number">
             <span>02</span>
@@ -373,7 +410,8 @@
           </div>
         </article>
 
-        <!-- 03: Messenger and Email -->
+        <!-- 03: Messenger and Riseup -->
+
         <article class="step" id="messenger">
           <div class="step-number">
             <span>03</span>
