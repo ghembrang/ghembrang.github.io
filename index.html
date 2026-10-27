@@ -78,11 +78,6 @@
       flex-shrink: 0;
     }
 
-    .brand-dot.cyan {
-      background: var(--cyan);
-      box-shadow: 0 0 14px var(--cyan);
-    }
-
     .brand-dot.pink {
       background: var(--pink);
       box-shadow: 0 0 14px var(--pink);
@@ -91,6 +86,11 @@
     .brand-dot.purple {
       background: var(--purple);
       box-shadow: 0 0 14px var(--purple);
+    }
+
+    .brand-dot.cyan {
+      background: var(--cyan);
+      box-shadow: 0 0 14px var(--cyan);
     }
 
     .brand-name {
@@ -178,9 +178,8 @@
       min-width: 236px;
       min-height: 44px;
       padding: 12px 18px;
-      border: 1px solid #ff38b1;
+      border: 1px solid transparent;
       border-radius: 7px;
-      background: linear-gradient(110deg, #c4147d, #921271);
       color: white;
       text-decoration: none;
       text-align: center;
@@ -190,9 +189,39 @@
       transition: filter .2s, box-shadow .2s;
     }
 
+    /* 01: Manifesto — Pink */
+    .button-pink {
+      border-color: var(--pink);
+      background: linear-gradient(110deg, #c4147d, var(--pink));
+    }
+
+    .button-pink:hover {
+      box-shadow: 0 0 18px rgba(237,22,141,.3);
+    }
+
+    /* 02: Website — Purple */
+    .button-purple {
+      border-color: var(--purple);
+      background: linear-gradient(110deg, #65128f, var(--purple));
+    }
+
+    .button-purple:hover {
+      box-shadow: 0 0 18px rgba(145,38,199,.3);
+    }
+
+    /* 03: Messenger and Riseup — Cyan */
+    .button-cyan {
+      border-color: var(--cyan);
+      background: linear-gradient(110deg, #087d91, var(--cyan));
+      color: #090910;
+    }
+
+    .button-cyan:hover {
+      box-shadow: 0 0 18px rgba(32,217,233,.3);
+    }
+
     .button:hover {
-      filter: brightness(1.2);
-      box-shadow: 0 0 18px rgba(237,22,141,.25);
+      filter: brightness(1.15);
     }
 
     .button + .button {
@@ -272,9 +301,9 @@
     <header>
       <a class="brand" href="#home" aria-label="GHXYZ home">
         <span class="brand-dots" aria-hidden="true">
-          <span class="brand-dot cyan"></span>
           <span class="brand-dot pink"></span>
           <span class="brand-dot purple"></span>
+          <span class="brand-dot cyan"></span>
         </span>
 
         <span class="brand-name">GHXYZ</span>
@@ -288,50 +317,50 @@
 
       <section class="access-panel">
 
-        <!-- 01: X - Manifesto -->
+        <!-- 01: GH Manifesto -->
         <article class="step" id="manifesto">
           <div class="step-number">
             <span>01</span>
           </div>
 
           <div class="step-content">
-            <h2>X - Manifesto</h2>
+            <h2>GH Manifesto</h2>
 
             <p>
               Depth over breadth; narrow and deep, not shallow and wide.
             </p>
 
             <a
-              class="button"
+              class="button button-pink"
               href="https://gh.taild9388d.ts.net/manifesto"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GH-Manifesto ↗
+              Read Full Manifesto ↗
             </a>
           </div>
         </article>
 
-        <!-- 02: Y - Website -->
+        <!-- 02: Website -->
         <article class="step" id="website">
           <div class="step-number">
             <span>02</span>
           </div>
 
           <div class="step-content">
-            <h2>Y - Website</h2>
+            <h2>Website</h2>
 
             <p>
-              A writing sanctuary. Poetry is my therapy; and everything else when I get bored.
+              Welcome to my writing sanctuary. Poetry is my therapy; and everything else when I get bored.
             </p>
 
             <a
-              class="button"
+              class="button button-purple"
               href="https://gh.taild9388d.ts.net"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GH-Website ↗
+              Enter Website ↗
             </a>
           </div>
         </article>
@@ -343,26 +372,26 @@
           </div>
 
           <div class="step-content">
-            <h2>Z - Connect</h2>
+            <h2>Messenger</h2>
 
             <p>
-              Select one; my self-hosted Messenger or Riseup. 
+              Connect to my GHXYZ Messenger or Riseup.
             </p>
 
             <a
-              class="button"
+              class="button button-cyan"
               href="https://YOUR-GHXYZ-MESSENGER-URL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GH-Messenger ↗
+              GHXYZ Messenger ↗
             </a>
 
             <a
-              class="button"
+              class="button button-cyan"
               href="mailto:ghembrang@riseup.net?subject=Hello%20GHXYZ"
             >
-              GH-Riseup ↗
+              Riseup ↗
             </a>
           </div>
         </article>
